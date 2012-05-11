@@ -42,11 +42,10 @@ public class LabelCellEditorLocator implements CellEditorLocator
 		Point pref = text.computeSize(SWT.DEFAULT, SWT.DEFAULT);
 		Rectangle rect = label.getTextBounds().getCopy();
 		label.translateToAbsolute(rect);
-		if (text.getCharCount() > 1)
-			text.setBounds(rect.x - 1, rect.y - 1, pref.x + 1, pref.y + 1);
-		else
-			text.setBounds(rect.x - 1, rect.y - 1, pref.y + 1, pref.y + 1);
-
+		
+		final int offset = text.getCharCount() > 1 ? pref.x : pref.y;
+		
+		text.setBounds(rect.x - 1, rect.y - 1, offset + 1, pref.y + 1);
 	}
 
 	/**

@@ -71,9 +71,7 @@ public class ColumnPart extends PropertyAwarePart
 	{
 		IFigure figure = getFigure();
 		figure.translateToRelative(requestLoc);
-		if (figure.containsPoint(requestLoc))
-			return true;
-		return false;
+		return figure.containsPoint(requestLoc);
 	}
 
 	protected void performDirectEdit()
@@ -84,11 +82,11 @@ public class ColumnPart extends PropertyAwarePart
 			ValidationMessageHandler handler = viewer.getValidationHandler();
 
 			Label l = (Label) getFigure();
-			ColumnNameTypeCellEditorValidator columnNameTypeCellEditorValidator = new ColumnNameTypeCellEditorValidator(
-					handler);
-
-			manager = new ExtendedDirectEditManager(this, TextCellEditor.class, new LabelCellEditorLocator(l), l,
-					columnNameTypeCellEditorValidator);
+			manager = new ExtendedDirectEditManager(
+					this, TextCellEditor.class,
+					new LabelCellEditorLocator(l), l,
+					new ColumnNameTypeCellEditorValidator( handler)
+			);
 		}
 		manager.show();
 	}
