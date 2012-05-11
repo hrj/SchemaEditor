@@ -14,13 +14,13 @@ import org.eclipse.draw2d.graph.Edge;
 import org.eclipse.draw2d.graph.EdgeList;
 import org.eclipse.draw2d.graph.Node;
 import org.eclipse.draw2d.graph.NodeList;
-import org.eclipse.draw2d.internal.graph.GraphVisitor;
+// import org.eclipse.draw2d.graph.GraphVisitor;
 
 /**
  * Creates dummy edges between nodes, to be used with NodeJoiningDirectedGraphLayout
  * @author Phil Zoio
  */
-public class DummyEdgeCreator extends GraphVisitor
+public class DummyEdgeCreator // extends GraphVisitor
 {
 
 	NodeList nodeList;

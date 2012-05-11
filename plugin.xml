@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.realpersist.gef.editor.SchemaDiagramEditor"
+            default="false"
+            extensions="schema"
+            id="com.realpersist.gef.schemaeditor"
+            name="Schema Editor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.gef.examples"
+            name="Examples"
+            parentCategory="org.eclipse.ui.Examples">
+      </category>
+      <wizard
+            category="org.eclipse.ui.Examples/org.eclipse.gef.examples"
+            class="com.realpersist.gef.editor.wizard.SchemaDiagramWizard"
+            id="schemaeditor.wizard"
+            name="Schema Diagram">
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+   </extension>
+
+</plugin>

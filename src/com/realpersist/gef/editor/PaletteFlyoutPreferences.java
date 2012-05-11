@@ -22,12 +22,15 @@ public class PaletteFlyoutPreferences implements FlyoutPreferences
 
 	public int getDockLocation()
 	{
+		return PositionConstants.WEST;
+		/*
 		int location = SchemaDiagramPlugin.getDefault().getPreferenceStore().getInt(PALETTE_DOCK_LOCATION);
 		if (location == 0)
 		{
 			return PositionConstants.WEST;
 		}
 		return location;
+		*/
 	}
 
 	public int getPaletteState()
@@ -38,10 +41,13 @@ public class PaletteFlyoutPreferences implements FlyoutPreferences
 
 	public int getPaletteWidth()
 	{
+		return DEFAULT_PALETTE_WIDTH;
+		/*
 		int width = SchemaDiagramPlugin.getDefault().getPreferenceStore().getInt(PALETTE_SIZE);
 		if (width == 0)
 			return DEFAULT_PALETTE_WIDTH;
 		return width;
+		*/
 	}
 
 	public void setDockLocation(int location)

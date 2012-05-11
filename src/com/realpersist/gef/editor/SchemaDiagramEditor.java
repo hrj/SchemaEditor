@@ -16,7 +16,6 @@ import org.eclipse.gef.ContextMenuProvider;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.EditDomain;
 import org.eclipse.gef.EditPartViewer;
-import org.eclipse.gef.GEFPlugin;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.KeyHandler;
 import org.eclipse.gef.KeyStroke;
@@ -40,6 +39,7 @@ import org.eclipse.gef.ui.palette.PaletteViewerProvider;
 import org.eclipse.gef.ui.palette.FlyoutPaletteComposite.FlyoutPreferences;
 import org.eclipse.gef.ui.parts.GraphicalEditorWithFlyoutPalette;
 import org.eclipse.gef.ui.parts.GraphicalViewerKeyHandler;
+import org.eclipse.gef.ui.properties.UndoablePropertySheetEntry;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ISelection;
@@ -491,7 +491,7 @@ public class SchemaDiagramEditor extends GraphicalEditorWithFlyoutPalette
 		if (null == undoablePropertySheetPage)
 		{
 			undoablePropertySheetPage = new PropertySheetPage();
-			undoablePropertySheetPage.setRootEntry(GEFPlugin.createUndoablePropertySheetEntry(getCommandStack()));
+			undoablePropertySheetPage.setRootEntry(new UndoablePropertySheetEntry(getCommandStack()));
 		}
 
 		return undoablePropertySheetPage;
@@ -508,10 +508,12 @@ public class SchemaDiagramEditor extends GraphicalEditorWithFlyoutPalette
 	/**
 	 * @return the preferences for the Palette Flyout
 	 */
+	/*
 	protected FlyoutPreferences getPalettePreferences()
 	{
 		return new PaletteFlyoutPreferences();
 	}
+	*/
 
 	/**
 	 * @return the PaletteRoot to be used with the PaletteViewer

@@ -5,7 +5,6 @@ import java.util.ResourceBundle;
 
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IPluginDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
@@ -29,23 +28,6 @@ public class SchemaDiagramPlugin extends AbstractUIPlugin
 	public SchemaDiagramPlugin()
 	{
 		super();
-		plugin = this;
-		try
-		{
-			resourceBundle = ResourceBundle.getBundle("com.realpersist.gef.schemaeditor.SchemaDiagramPluginResources");
-		}
-		catch (MissingResourceException x)
-		{
-			resourceBundle = null;
-		}
-	}
-
-	/**
-	 * The constructor.
-	 */
-	public SchemaDiagramPlugin(IPluginDescriptor descriptor)
-	{
-		super(descriptor);
 		plugin = this;
 		try
 		{
